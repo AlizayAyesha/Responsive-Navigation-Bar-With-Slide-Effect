@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #666262;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* CSS for hamburger menu */
+.hamburger-menu {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    position: absolute;
+    top: 20px; /* Adjust top position as needed */
+    left: 20px; /* Adjust left position as needed */
+    cursor: pointer;
+    z-index: 1000; /* Ensure the hamburger menu is above other content */
+}
+
+.menu {
+    display: none;
+    width: 200px; /* Adjust width as needed */
+    position: absolute;
+    top: 80px; /* Adjust top position to align with your layout */
+    left: 20px; /* Adjust left position as needed */
+    background-color: #df731b;
+    box-shadow: 0 5px 20px rgba(224, 217, 217, 0.1);
+    z-index: 999; /* Ensure the menu is above the background */
+}
+
+.menu li {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Hamburger menu animation */
+.hamburger-menu .menu-burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #582b05;
+    margin: 6px auto; /* Adjust spacing between lines */
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.open .menu-burger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open .menu-burger span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .menu-burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: #052233;
+    border-radius: 50%;
+    position: absolute;
+    mix-blend-mode: difference;
+    transition: all 0.1s ease-out;
+    pointer-events: none;
+    transform: scale(1); /* Initial scale */
+    z-index: -1;
+  }
+  
+  h2:hover + .circle {
+    transform: scale(70); /* Scale up on hover */
+  }
+  
+.hero-background,
+.hero-background h2 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    color: #d67230;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+.hero-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: transform 0.1s ease-out; /* Add transition for smooth movement */
+}
+  
+  .content {
+    width: 100%;
+    padding: 80px 120px;
+    background-color: #666262;
+  }
+  
+  .content h2 {
+    margin-bottom: 30px;
+    color: #df731b;
+    font-size: 70px;
+    font-weight: 500;
+    text-align: center;
+    
+  }
+  
+  .content p {
+    color: #381a04;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: justify;
+    text-align-last: center;
+    line-height: 1.7;
+  }
+  
