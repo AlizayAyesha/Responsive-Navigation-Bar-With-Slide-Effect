@@ -142,3 +142,14 @@
     line-height: 1.7;
   }
   
+  footer {
+    width: 100%;
+    background-color: #c9691a;
+    text-align: center;
+    color: #fff;
+  }
+
+  footer > p {
+    position: relative;
+    top: -2.7rem;
+  }
