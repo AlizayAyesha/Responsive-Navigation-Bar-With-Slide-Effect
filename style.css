@@ -5,72 +5,101 @@
   }
   
   body {
-    background-color: #666262;
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-  }
+      background-color: #666262;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
   
   /* CSS for hamburger menu */
+/* Header and menu (mobile-first) */
+.menu-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px;
+}
+
 .hamburger-menu {
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    position: absolute;
-    top: 20px; /* Adjust top position as needed */
-    left: 20px; /* Adjust left position as needed */
-    cursor: pointer;
-    z-index: 1000; /* Ensure the hamburger menu is above other content */
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1001; /* Ensure the hamburger menu is above other content */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.hamburger-menu:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .menu {
-    display: none;
-    width: 200px; /* Adjust width as needed */
-    position: absolute;
-    top: 80px; /* Adjust top position to align with your layout */
-    left: 20px; /* Adjust left position as needed */
-    background-color: #df731b;
-    box-shadow: 0 5px 20px rgba(224, 217, 217, 0.1);
-    z-index: 999; /* Ensure the menu is above the background */
+  display: none;
+  width: calc(100% - 40px);
+  max-width: 220px; /* mobile menu max width */
+  position: absolute;
+  top: 80px; /* placed below hamburger */
+  left: 20px;
+  background-color: rgba(223, 115, 27, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure the menu is above the background */
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .menu li {
-    list-style: none;
-    padding: 10px 0;
+  list-style: none;
+  padding: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .menu li a {
-    display: block;
-    padding: 10px;
-    color: #000000;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
+  display: block;
+  padding: 14px 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.menu li a:hover {
-    background-color: #f0f0f0;
+.menu li a:hover,
+.menu li a.active {
+  background-color: rgba(255,255,255,0.25);
 }
 
 /* Hamburger menu animation */
-.hamburger-menu .menu-burger span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #582b05;
-    margin: 6px auto; /* Adjust spacing between lines */
-    transition: all 0.3s ease-in-out;
+.hamburger-menu .menu-burger span,
+.menu-burger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 5px 0; /* spacing between lines */
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  border-radius: 2px;
 }
 
 .hamburger-menu.open .menu-burger span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(4px, 4px);
 }
 
 .hamburger-menu.open .menu-burger span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
+  transform: translateX(-10px);
 }
 
 .hamburger-menu.open .menu-burger span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(4px, -4px);
 }
 
 .circle {
@@ -92,54 +121,55 @@
   
 .hero-background,
 .hero-background h2 {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0; /* Remove any margin */
-    padding: 0; /* Remove any padding */
-    color: #d67230;
-    font-size: 50px;
-    font-weight: 700;
-    text-transform: capitalize;
-    overflow: hidden;
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+  color: #d67230;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: capitalize;
+  overflow: hidden;
 }
 
 .hero-background img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    transition: transform 0.1s ease-out; /* Add transition for smooth movement */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transition: transform 0.15s ease-out; /* Add transition for smooth movement */
 }
   
   .content {
     width: 100%;
-    padding: 80px 120px;
+    padding: 36px 20px;
     background-color: #666262;
   }
-  
+
   .content h2 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #df731b;
-    font-size: 70px;
+    font-size: 32px;
     font-weight: 500;
     text-align: center;
-    
   }
-  
+
   .content p {
-    color: #381a04;
-    font-size: 18px;
+    color: #dad9d9;
+    font-size: 16px;
     font-weight: 300;
     text-align: justify;
     text-align-last: center;
     line-height: 1.7;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   
   footer {
@@ -147,9 +177,27 @@
     background-color: #c9691a;
     text-align: center;
     color: #fff;
+    padding: 24px 12px;
   }
 
   footer > p {
-    position: relative;
-    top: -2.7rem;
+    margin: 0;
+    padding: 4px 0;
   }
+
+/* Medium and up: adjust spacing and typography */
+@media (min-width: 768px) {
+  .hero-background,
+  .hero-background h2 {
+    height: 100vh;
+    font-size: 48px;
+  }
+
+  .content {
+    padding: 80px 80px;
+  }
+
+  .content h2 {
+    font-size: 56px;
+  }
+}
