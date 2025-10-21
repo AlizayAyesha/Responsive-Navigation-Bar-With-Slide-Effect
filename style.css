@@ -13,13 +13,17 @@
   
   /* CSS for hamburger menu */
 /* Header and menu (mobile-first) */
-.menu-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 20px;
+
+header.menu-wrapper {
+  position: absolute !important;  /* Keeps it on top of the image */
+  top: 0 !important;              /* Pins it to the top */
+  left: 0 !important;             /* Pins it to the left */
+  right: 0 !important;            /* Makes it full width */
+  z-index: 1000;
+  padding: 20px;                  /* <-- THIS IS THE KEY! */
+  background: none !important;
+  border-bottom: none !important;
+  text-align: left !important;
 }
 
 .hamburger-menu {
@@ -506,5 +510,208 @@
 
   .info-value {
     font-size: 20px;
+  }
+}
+/* =========================
+   ABOUT / POETRY WALL
+   ========================= */
+.about-section {
+  background: linear-gradient(180deg, #fffaf6 0%, #fff7f1 100%);
+  color: #2c2c2c;
+  padding: 4rem 1.5rem;
+  border-radius: 16px;
+  margin: 3rem auto;
+  max-width: 1100px;
+  box-shadow: 0 10px 30px rgba(88, 43, 5, 0.08);
+  border: 1px solid rgba(223, 115, 27, 0.06);
+  text-align: center;
+}
+
+/* Header Section */
+.about-intro h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #df731b;
+  margin-bottom: 0.5rem;
+}
+
+.about-intro .lead {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0 auto 2rem auto;
+  max-width: 800px;
+}
+
+/* Form Section */
+.poetry-controls {
+  margin-bottom: 2.5rem;
+}
+
+.poem-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.poem-form input[type="text"] {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 2px solid rgba(223, 115, 27, 0.18);
+  background: #fff;
+  font-size: 1rem;
+  min-width: 240px;
+  transition: all 0.25s ease;
+}
+
+.poem-form input[type="text"]:focus {
+  border-color: #df731b;
+  box-shadow: 0 6px 18px rgba(223, 115, 27, 0.1);
+}
+
+.poem-form button {
+  background: linear-gradient(90deg, #df731b, #c9691a, #582b05);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poem-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(223, 115, 27, 0.18);
+}
+
+/* Wall Section */
+.poetry-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  justify-items: center;
+}
+
+.poem-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(223, 115, 27, 0.15);
+  padding: 1.4rem;
+  width: 100%;
+  max-width: 340px;
+  text-align: left;
+  box-shadow: 0 8px 26px rgba(88, 43, 5, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.poem-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(223, 115, 27, 0.15);
+}
+
+.poem-card blockquote {
+  font-style: italic;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.poem-card footer {
+  margin-top: 0.8rem;
+  font-weight: 700;
+  color: #df731b;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+/* Responsive Fixes */
+@media (min-width: 768px) {
+  .poem-form input[type="text"] {
+    min-width: 300px;
+  }
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff7f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(135deg, #ffb347, #ffcc80);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 4px solid #ffa94d;
+}
+
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* About Section */
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff3e0;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #ff8c42;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* Author Name (Footer Section) */
+footer {
+  background: linear-gradient(135deg, #ffb347, #ffcc80);
+  color: #222;
+  text-align: center;
+  padding: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+footer span {
+  font-weight: 700;
+  color: #ff7043;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
   }
 }

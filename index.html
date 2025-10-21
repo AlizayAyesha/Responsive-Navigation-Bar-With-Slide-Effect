@@ -10,12 +10,12 @@
       rel="stylesheet"
     />
     <!-- stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="style.css?v=2" />
   </head>
   <body>
-   
-    <header class="menu-wrapper">
-      <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+    <header class="menu-wrapper" style="background: none !important; border-bottom: none !important; text-align: left !important; position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; padding: 20px !important;">
+         <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
         <span class="menu-burger">
           <span></span>
           <span></span>
@@ -88,6 +88,38 @@
         magnam beatae, tempora molestias labore deserunt in numquam id voluptas!
       </p>
     </div>
+
+         <!-- ABOUT / Poetry Wall --> 
+   <section class="about-section" id="about">
+  <div class="container">
+    <div class="about-intro">
+      <h2>About</h2>
+      <p class="lead">
+        A little wall for motivation — drop by to read or add a short poem or quote that inspires you.
+      </p>
+    </div>
+
+    <div class="poetry-controls">
+      <form class="poem-form" id="poemForm">
+        <input type="text" id="author" placeholder="Your name (optional)" />
+        <input type="text" id="poemText" placeholder="Write a short motivational line or poem" />
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <div class="poetry-wall" id="poetryWall">
+      <div class="poem-card">
+        <blockquote>“Small steps every day make mountains shrink.”</blockquote>
+        <footer>– Anonymous</footer>
+      </div>
+      <div class="poem-card">
+        <blockquote>“Rise, try again, and shine brighter.”</blockquote>
+        <footer>– Amrita</footer>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Poetry Card Section -->
     <section class="poetry-section">

@@ -22,3 +22,26 @@ $(document).ready(function () {
         $(".hero-background img").css('transform', 'translateY(' + -(scrollTop * 0.5) + 'px)');
     });
 });
+
+const poemForm = document.getElementById("poemForm");
+const poetryWall = document.getElementById("poetryWall");
+
+poemForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const author = document.getElementById("author").value.trim() || "Anonymous";
+  const text = document.getElementById("poemText").value.trim();
+
+  if (!text) return;
+
+  const card = document.createElement("div");
+  card.classList.add("poem-card");
+  card.innerHTML = `
+    <blockquote>“${text}”</blockquote>
+    <footer>– ${author}</footer>
+  `;
+
+  poetryWall.prepend(card);
+
+  poemForm.reset();
+});
