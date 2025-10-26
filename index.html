@@ -1,4 +1,188 @@
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Responsive Navigation Bar With Slide Effect</title>
+		<!-- Google Fonts CDN Link -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- stylesheet -->
+		<!-- <link rel="stylesheet" href="style.css" /> -->
+		<link rel="stylesheet" href="style.css?v=2" />
+	</head>
+	<body>
+		<header
+			class="menu-wrapper"
+			style="
+				background: none !important;
+				border-bottom: none !important;
+				text-align: left !important;
+				position: absolute !important;
+				top: 0 !important;
+				left: 0 !important;
+				right: 0 !important;
+				padding: 20px !important;
+			"
+		>
+			<button
+				class="hamburger-menu"
+				aria-label="Toggle menu"
+				aria-expanded="false"
+			>
+				<span class="menu-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+			<nav class="menu" role="navigation" aria-label="Main Menu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Category</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Your hero section and content -->
+
+		<section class="hero-background">
+			<img src="aa.png" class="Parallax" />
+			<h2>Responsive Navigation Bar</h2>
+			<div class="circle"></div>
+		</section>
+		<div class="content">
+			<h2>Poetry blogspot</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+				accusamus magni eum labore minus, similique dolore veniam
+				repellat adipisci illo sapiente, suscipit quibusdam laborum
+				vitae est reprehenderit id temporibus eos, quia asperiores
+				expedita sequi. Amet odio, tenetur id aliquam voluptatem ab
+				maxime aperiam corrupti placeat a quidem voluptates vel neque
+				animi nemo delectus temporibus sunt deserunt incidunt, ducimus
+				enim quis, ipsum eveniet rerum! Molestiae amet asperiores
+				excepturi tempore voluptate, placeat architecto dolor, ipsa ea
+				nihil, voluptates dicta. Harum, voluptatibus doloribus! Modi
+				aperiam non quod necessitatibus minima similique cupiditate, vel
+				sequi alias sit eum obcaecati mollitia doloribus magnam
+				voluptatem autem neque voluptatum reiciendis odio? Molestiae
+				maiores earum sequi accusamus cumque distinctio voluptatum ullam
+				esse, nostrum nisi! Praesentium ipsum mollitia, molestiae ab
+				iure ut temporibus deleniti fugiat, nobis culpa dolorum adipisci
+				sed dignissimos non eligendi nam quas tempore doloribus, quo
+				blanditiis necessitatibus. Commodi itaque modi consectetur aut
+				ea. Animi obcaecati omnis ad blanditiis velit cumque explicabo
+				ducimus facilis, fugiat inventore tempore dolore doloribus ea
+				atque et eos temporibus dolores aliquid libero quia sapiente ut.
+				Ipsum perferendis maiores ea eius expedita iure reiciendis in
+				molestias perspiciatis, eum officiis odio? Reprehenderit tenetur
+				nobis nam cum placeat, corporis cupiditate sint ipsa ipsum
+				aspernatur quasi quae illo. Modi officiis perspiciatis fuga
+				delectus ullam qui exercitationem reiciendis quasi obcaecati
+				quae, repellendus voluptatem ipsam nisi, omnis veniam ipsa illo?
+				Repellat quasi sequi corrupti, soluta excepturi cupiditate ipsam
+				ex veritatis deserunt nam, delectus ad voluptates distinctio
+				vero quisquam nemo temporibus dicta laborum nesciunt possimus
+				beatae dolor. Sequi iure autem temporibus magnam tempore
+				repellendus, quod laboriosam nobis obcaecati ullam sapiente
+				saepe quaerat sint aperiam maxime id voluptates nihil corporis
+				ab officiis? Ipsam laborum sint mollitia aliquid est debitis
+				natus voluptates itaque voluptatum dicta, quam recusandae nulla
+				aliquam numquam harum vel fuga dolor labore beatae! Iure totam
+				nesciunt beatae aspernatur suscipit rem minima nam,
+				reprehenderit vero. Quibusdam tempore voluptatibus quis impedit
+				rerum incidunt vitae totam? Aperiam commodi dicta facilis esse
+				laboriosam labore magnam dolore voluptate quas, nostrum quaerat
+				eligendi quam, tempora repudiandae! Nobis animi alias accusamus
+				consequuntur dolorum qui obcaecati, est sit explicabo molestiae
+				doloribus quo! Minus quas possimus cum soluta rem eaque.
+				Perspiciatis minima quam quasi aut dolor culpa corporis placeat
+				dignissimos corrupti laborum dolore saepe in beatae at
+				repellendus delectus magnam necessitatibus, sapiente sit
+				molestiae totam explicabo? Consequuntur, eum necessitatibus?
+				Amet quaerat laudantium, perferendis voluptatum ipsum maiores
+				debitis et, magnam beatae, tempora molestias labore deserunt in
+				numquam id voluptas!
+			</p>
+		</div>
+
+		<!-- ABOUT / Poetry Wall -->
+		<section class="about-section" id="about">
+			<div class="container">
+				<div class="about-intro">
+					<h2>About</h2>
+					<p class="lead">
+						A little wall for motivation — drop by to read or add a
+						short poem or quote that inspires you.
+					</p>
+				</div>
+
+				<div class="poetry-controls">
+					<form class="poem-form" id="poemForm">
+						<input
+							type="text"
+							id="author"
+							placeholder="Your name (optional)"
+						/>
+						<input
+							type="text"
+							id="poemText"
+							placeholder="Write a short motivational line or poem"
+						/>
+						<button type="submit">Add</button>
+					</form>
+				</div>
+
+				<div class="poetry-wall" id="poetryWall">
+					<div class="poem-card">
+						<blockquote>
+							“Small steps every day make mountains shrink.”
+						</blockquote>
+						<footer>– Anonymous</footer>
+					</div>
+					<div class="poem-card">
+						<blockquote>
+							“Rise, try again, and shine brighter.”
+						</blockquote>
+						<footer>– Amrita</footer>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Poetry Card Section -->
+		<section class="poetry-section">
+			<div class="poetry-container">
+				<div class="poetry-card">
+					<div class="card-header">
+						<h3 class="card-title">The Code We Write</h3>
+						<p class="card-author">Original • For Developers</p>
+					</div>
+					<div class="card-body">
+						<div class="poem-text">
+							<p>
+								<strong
+									>In lines of code, we craft our
+									dreams,</strong
+								><br />
+								Where logic flows in endless streams,<br />
+								From zero to one, from false to true,<br />
+								We build the world with something new.
+							</p>
+
+							<p>
+								<strong
+									>When bugs arise and tests all fail,</strong
+								><br />
+								When errors strike and systems pale,<br />
+								We don't give up, we don't retreat,<br />
+								We debug, refactor, and compete.
+							</p>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -222,6 +406,145 @@
   </body>
 </html>
 
+							<p>
+								<strong
+									>Through sleepless nights and morning
+									light,</strong
+								><br />
+								We solve the problems, make it right,<br />
+								With every function, every class,<br />
+								We shape the future, unsurpassed.
+							</p>
 
+							<p>
+								<strong
+									>The stack may overflow with tasks,</strong
+								><br />
+								The complexity may test what's asked,<br />
+								But in our hearts, we know the way—<br />
+								One line of code can change the day.
+							</p>
+
+							<p>
+								<strong>From algorithms to AI,</strong><br />
+								From databases to UI,<br />
+								We are the builders, architects,<br />
+								Creating systems that connect.
+							</p>
+
+							<p>
+								<strong
+									>So when you face the toughest code,</strong
+								><br />
+								Remember this upon your road:<br />
+								<em>Every master was once a beginner,</em><br />
+								<em>Every error makes you winner,</em><br />
+								<em>Keep pushing forward, never stop,</em><br />
+								<em>Until your code runs at the top.</em>
+							</p>
+
+							<p class="signature">
+								// Keep coding, keep creating<br />
+								// The future is waiting
+							</p>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="code-icon">&lt;/&gt;</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section class="contact-section">
+			<div class="contact-container">
+				<div class="contact-content">
+					<h2 class="contact-title">Get In Touch</h2>
+					<div class="contact-info">
+						<div class="info-item">
+							<span class="info-label">Developer</span>
+							<span class="info-value">M Marjan Ahmed</span>
+						</div>
+						<div class="info-item">
+							<span class="info-label">Email</span>
+							<a
+								href="mailto:marjanahmed.dev@gmail.com"
+								class="info-value email-link"
+							>
+								marjanahmed.dev@gmail.com
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+			<path
+				fill="#c9691a"
+				fill-opacity="1"
+				d="M0,224L48,234.7C96,245,192,267,288,250.7C384,235,480,181,576,149.3C672,117,768,107,864,128C960,149,1056,203,1152,186.7C1248,171,1344,85,1392,42.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+			></path>
+		</svg>
+		<!-- Contact Section -->
+		<section class="contact-section">
+			<div class="contact-container">
+				<div class="contact-content">
+					<h2 class="contact-title">Contact</h2>
+					<p
+						class="info-value"
+						style="font-size: 20px; color: #fff; margin-bottom: 8px"
+					>
+						Daksh Aggarwal
+					</p>
+					<a
+						href="mailto:dakshaggarwal.spam@gmail.com"
+						class="email-link info-value"
+						style="font-size: 18px"
+					>
+						dakshaggarwal.spam@gmail.com
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<p>
+				&copy;
+				<span id="year"></span>
+				All Rights Reserved
+			</p>
+			<p>Alizay Ayesha</p>
+		</footer>
+
+		<!-- Script to generate footer year automatically -->
+		<script>
+			document.getElementById("year").innerHTML =
+				new Date().getFullYear();
+		</script>
+		<!-- jQuery CDN Link -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Custom js -->
+		<script
+			<div
+			style="
+				padding: 20px;
+				margin: 20px;
+				border: 1px solid black;
+				border-radius: 8px;
+				text-align: center;
+				background: #fff;
+			"
+		>
+			  <h2 style="color: #333;">A Motivational Poem</h2>
+			  <p style="color: #555;">The woods are lovely, dark and deep,<br>
+			  But I have promises to keep,<br>
+			  And miles to go before I sleep,<br>
+			  And miles to go before I sleep.</p>
+			</div> src="main.js">
+		</script>
+	</body>
+</html>
 
 
