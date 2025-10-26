@@ -694,7 +694,107 @@ footer span {
         font-size: 2rem;
     }
 
-    .about p {
-        font-size: 1rem;
-    }
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  ul {
+    flex-direction: column;
+    margin: 10px 0;
+  }
+
+  li {
+    margin: 10px 0;
+  }
+
+  button {
+    width: 200px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  main h1 {
+    font-size: 2rem;
+  }
+
+  main p {
+    font-size: 1.1rem;
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  .card .card-content,
+  .card img {
+    width: 90%;
+    margin: 10px 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery .gallery-img {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .gallery h1 {
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .gallery h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 40px 20px;
+  }
+
+  .contact-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .info-value,
+  .email-link {
+    font-size: 1rem;
+    word-wrap: break-word;
+  }
+}
+@media (max-width: 768px) {
+  footer {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  footer textarea {
+    width: 100%;
+  }
+
+  footer input {
+    width: 90%;
+  }
 }
