@@ -2,108 +2,104 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-      background-color: #666262;
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
-    }
-  
-  /* CSS for hamburger menu */
-/* Header and menu (mobile-first) */
+}
+
+body {
+    background-color: #666262;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
 
 header.menu-wrapper {
-  position: absolute !important;  /* Keeps it on top of the image */
-  top: 0 !important;              /* Pins it to the top */
-  left: 0 !important;             /* Pins it to the left */
-  right: 0 !important;            /* Makes it full width */
-  z-index: 1000;
-  padding: 20px;                  /* <-- THIS IS THE KEY! */
-  background: none !important;
-  border-bottom: none !important;
-  text-align: left !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000;
+    padding: 20px;
+    background: none !important;
+    border-bottom: none !important;
+    text-align: left !important;
 }
 
 .hamburger-menu {
-  width: 48px;
-  height: 48px;
-  padding: 8px;
-  background: rgba(0, 0, 0, 0.3);
-  border: none;
-  border-radius: 8px;
-  position: relative;
-  cursor: pointer;
-  z-index: 1001; /* Ensure the hamburger menu is above other content */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
 }
 
 .hamburger-menu:hover {
-  background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .menu {
-  display: none;
-  width: calc(100% - 40px);
-  max-width: 220px; /* mobile menu max width */
-  position: absolute;
-  top: 80px; /* placed below hamburger */
-  left: 20px;
-  background-color: rgba(223, 115, 27, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  z-index: 1000; /* Ensure the menu is above the background */
-  border-radius: 12px;
-  overflow: hidden;
+    display: none;
+    width: calc(100% - 40px);
+    max-width: 220px;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    background-color: rgba(223, 115, 27, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .menu li {
-  list-style: none;
-  padding: 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .menu li a {
-  display: block;
-  padding: 14px 18px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.2s ease-in-out;
+    display: block;
+    padding: 14px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .menu li a:hover,
 .menu li a.active {
-  background-color: rgba(255,255,255,0.25);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
-/* Hamburger menu animation */
 .hamburger-menu .menu-burger span,
 .menu-burger span {
-  display: block;
-  width: 28px;
-  height: 3px;
-  background-color: #ffffff;
-  margin: 5px 0; /* spacing between lines */
-  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
-  border-radius: 2px;
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+    border-radius: 2px;
 }
 
 .hamburger-menu.open .menu-burger span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 4px);
+    transform: rotate(45deg) translate(4px, 4px);
 }
 
 .hamburger-menu.open .menu-burger span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-10px);
+    opacity: 0;
+    transform: translateX(-10px);
 }
 
 .hamburger-menu.open .menu-burger span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
+    transform: rotate(-45deg) translate(4px, -4px);
 }
 
 .circle {
@@ -115,57 +111,57 @@ header.menu-wrapper {
     mix-blend-mode: difference;
     transition: all 0.1s ease-out;
     pointer-events: none;
-    transform: scale(1); /* Initial scale */
+    transform: scale(1);
     z-index: -1;
-  }
-  
-  h2:hover + .circle {
-    transform: scale(70); /* Scale up on hover */
-  }
-  
+}
+
+h2:hover + .circle {
+    transform: scale(70);
+}
+
 .hero-background,
 .hero-background h2 {
-  width: 100%;
-  height: 70vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove any padding */
-  color: #d67230;
-  font-size: 36px;
-  font-weight: 700;
-  text-transform: capitalize;
-  overflow: hidden;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    color: #d67230;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+    overflow: hidden;
 }
 
 .hero-background img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  transition: transform 0.15s ease-out; /* Add transition for smooth movement */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: transform 0.15s ease-out;
 }
-  
-  .content {
+
+.content {
     width: 100%;
     padding: 36px 20px;
     background-color: #666262;
-  }
+}
 
-  .content h2 {
+.content h2 {
     margin-bottom: 20px;
     color: #df731b;
     font-size: 32px;
     font-weight: 500;
     text-align: center;
-  }
+}
 
-  .content p {
+.content p {
     color: #dad9d9;
     font-size: 16px;
     font-weight: 300;
@@ -174,10 +170,9 @@ header.menu-wrapper {
     line-height: 1.7;
     max-width: 1000px;
     margin: 0 auto;
-  }
-  
-  /* Poetry Card Section */
-  .poetry-section {
+}
+
+.poetry-section {
     width: 100%;
     padding: 60px 20px;
     background: linear-gradient(135deg, #c9691a 0%, #df731b 50%, #582b05 100%);
@@ -186,9 +181,9 @@ header.menu-wrapper {
     align-items: center;
     min-height: 60vh;
     position: relative;
-  }
+}
 
-  .poetry-section::before {
+.poetry-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -198,16 +193,16 @@ header.menu-wrapper {
     background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><text x="10" y="20" font-family="monospace" font-size="12" fill="rgba(255,255,255,0.03)">01010101</text><text x="30" y="50" font-family="monospace" font-size="12" fill="rgba(255,255,255,0.03)">&lt;code/&gt;</text><text x="15" y="80" font-family="monospace" font-size="12" fill="rgba(255,255,255,0.03)">{ }</text></svg>');
     opacity: 0.5;
     pointer-events: none;
-  }
+}
 
-  .poetry-container {
+.poetry-container {
     max-width: 850px;
     width: 100%;
     position: relative;
     z-index: 1;
-  }
+}
 
-  .poetry-card {
+.poetry-card {
     background: rgba(255, 255, 255, 0.98);
     border-radius: 20px;
     padding: 40px 30px;
@@ -216,15 +211,15 @@ header.menu-wrapper {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid rgba(223, 115, 27, 0.3);
-  }
+}
 
-  .poetry-card:hover {
+.poetry-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 30px 80px rgba(88, 43, 5, 0.5);
     border-color: rgba(223, 115, 27, 0.6);
-  }
+}
 
-  .poetry-card::before {
+.poetry-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -232,9 +227,9 @@ header.menu-wrapper {
     width: 100%;
     height: 6px;
     background: linear-gradient(90deg, #df731b 0%, #c9691a 50%, #582b05 100%);
-  }
+}
 
-  .poetry-card::after {
+.poetry-card::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -243,17 +238,17 @@ header.menu-wrapper {
     height: 150px;
     background: radial-gradient(circle, rgba(223, 115, 27, 0.1) 0%, transparent 70%);
     pointer-events: none;
-  }
+}
 
-  .card-header {
+.card-header {
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 3px solid rgba(223, 115, 27, 0.3);
     position: relative;
-  }
+}
 
-  .card-header::after {
+.card-header::after {
     content: '';
     position: absolute;
     bottom: -3px;
@@ -262,9 +257,9 @@ header.menu-wrapper {
     width: 100px;
     height: 3px;
     background: linear-gradient(90deg, transparent, #df731b, transparent);
-  }
+}
 
-  .card-title {
+.card-title {
     font-size: 32px;
     font-weight: 800;
     color: #2c3e50;
@@ -275,9 +270,9 @@ header.menu-wrapper {
     background-clip: text;
     letter-spacing: 1px;
     text-transform: uppercase;
-  }
+}
 
-  .card-author {
+.card-author {
     font-size: 14px;
     color: #c9691a;
     font-style: italic;
@@ -285,45 +280,45 @@ header.menu-wrapper {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-  }
+}
 
-  .card-body {
+.card-body {
     margin-bottom: 20px;
-  }
+}
 
-  .poem-text {
+.poem-text {
     color: #2c3e50;
     line-height: 2;
     font-size: 16px;
     font-weight: 400;
-  }
+}
 
-  .poem-text p {
+.poem-text p {
     margin-bottom: 22px;
     text-align: left;
     animation: fadeInUp 0.8s ease-out;
     padding-left: 10px;
     border-left: 3px solid transparent;
     transition: border-color 0.3s ease;
-  }
+}
 
-  .poem-text p:hover {
+.poem-text p:hover {
     border-left-color: #df731b;
-  }
+}
 
-  .poem-text strong {
+.poem-text strong {
     color: #df731b;
     font-weight: 700;
     font-size: 17px;
-  }
+}
 
-  .poem-text em {
+.poem-text em {
     color: #c9691a;
     font-style: italic;
     font-weight: 500;
-  }
+}
 
-  .poem-text .signature {
+.poem-text .signature {
     font-family: 'Courier New', monospace;
     color: #7f8c8d;
     font-size: 14px;
@@ -331,387 +326,375 @@ header.menu-wrapper {
     padding-top: 20px;
     border-top: 2px dashed rgba(223, 115, 27, 0.3);
     font-style: italic;
-  }
+}
 
-  .poem-text p:last-child {
+.poem-text p:last-child {
     margin-bottom: 0;
-  }
+}
 
-  .card-footer {
+.card-footer {
     display: flex;
     justify-content: flex-end;
     margin-top: 30px;
-  }
+}
 
-  .code-icon {
+.code-icon {
     font-size: 60px;
     color: rgba(223, 115, 27, 0.25);
     font-family: 'Courier New', monospace;
     line-height: 1;
     font-weight: bold;
-  }
+}
 
-  @keyframes fadeInUp {
+@keyframes fadeInUp {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
 
-  /* Contact Section */
-  .contact-section {
+.contact-section {
     width: 100%;
     padding: 80px 20px;
     background-color: #666262;
-  }
+}
 
-  .contact-container {
+.contact-container {
     max-width: 900px;
     margin: 0 auto;
-  }
+}
 
-  .contact-content {
+.contact-content {
     background: rgba(223, 115, 27, 0.08);
     border: 1px solid #df731b;
     border-radius: 12px;
     padding: 60px 45px;
     text-align: center;
     transition: transform 0.3s ease, border-color 0.3s ease;
-  }
+}
 
-  .contact-content:hover {
+.contact-content:hover {
     transform: translateY(-3px);
     border-color: #c9691a;
-  }
+}
 
-  .contact-title {
+.contact-title {
     font-size: 28px;
     font-weight: 700;
     color: #df731b;
     margin: 0 0 30px 0;
     letter-spacing: 1px;
-  }
+}
 
-  .contact-info {
+.contact-info {
     display: flex;
     flex-direction: column;
     gap: 25px;
-  }
+}
 
-  .info-item {
+.info-item {
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
+}
 
-  .info-label {
+.info-label {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: #df731b;
     font-weight: 600;
     opacity: 0.8;
-  }
+}
 
-  .info-value {
+.info-value {
     font-size: 18px;
     color: #fff;
     font-weight: 500;
-  }
+}
 
-  .email-link {
+.email-link {
     text-decoration: none;
     transition: color 0.3s ease;
     word-break: break-all;
-  }
+}
 
-  .email-link:hover {
+.email-link:hover {
     color: #df731b;
-  }
+}
 
-  footer {
+footer {
     width: 100%;
     background-color: #c9691a;
     text-align: center;
     color: #fff;
     padding: 24px 12px;
-  }
+}
 
-  footer > p {
+footer > p {
     margin: 0;
     padding: 4px 0;
-  }
+}
 
-/* Medium and up: adjust spacing and typography */
 @media (min-width: 768px) {
-  .hero-background,
-  .hero-background h2 {
-    height: 100vh;
-    font-size: 48px;
-  }
+    .hero-background,
+    .hero-background h2 {
+        height: 100vh;
+        font-size: 48px;
+    }
 
-  .content {
-    padding: 80px 80px;
-  }
+    .content {
+        padding: 80px 80px;
+    }
 
-  .content h2 {
-    font-size: 56px;
-  }
+    .content h2 {
+        font-size: 56px;
+    }
 
-  .poetry-section {
-    padding: 100px 40px;
-  }
+    .poetry-section {
+        padding: 100px 40px;
+    }
 
-  .poetry-card {
-    padding: 60px 60px;
-  }
+    .poetry-card {
+        padding: 60px 60px;
+    }
 
-  .card-title {
-    font-size: 48px;
-  }
+    .card-title {
+        font-size: 48px;
+    }
 
-  .card-author {
-    font-size: 16px;
-  }
+    .card-author {
+        font-size: 16px;
+    }
 
-  .poem-text {
-    font-size: 18px;
-  }
+    .poem-text {
+        font-size: 18px;
+    }
 
-  .poem-text strong {
-    font-size: 19px;
-  }
+    .poem-text strong {
+        font-size: 19px;
+    }
 
-  .code-icon {
-    font-size: 80px;
-  }
+    .code-icon {
+        font-size: 80px;
+    }
 
-  .contact-section {
-    padding: 90px 40px;
-  }
+    .contact-section {
+        padding: 90px 40px;
+    }
 
-  .contact-content {
-    padding: 70px 70px;
-  }
+    .contact-content {
+        padding: 70px 70px;
+    }
 
-  .contact-title {
-    font-size: 36px;
-  }
+    .contact-title {
+        font-size: 36px;
+    }
 
-  .contact-info {
-    flex-direction: row;
-    gap: 60px;
-    justify-content: center;
-  }
+    .contact-info {
+        flex-direction: row;
+        gap: 60px;
+        justify-content: center;
+    }
 
-  .info-value {
-    font-size: 20px;
-  }
+    .info-value {
+        font-size: 20px;
+    }
 }
-/* =========================
-   ABOUT / POETRY WALL
-   ========================= */
+
 .about-section {
-  background: linear-gradient(180deg, #fffaf6 0%, #fff7f1 100%);
-  color: #2c2c2c;
-  padding: 4rem 1.5rem;
-  border-radius: 16px;
-  margin: 3rem auto;
-  max-width: 1100px;
-  box-shadow: 0 10px 30px rgba(88, 43, 5, 0.08);
-  border: 1px solid rgba(223, 115, 27, 0.06);
-  text-align: center;
+    background: linear-gradient(180deg, #fffaf6 0%, #fff7f1 100%);
+    color: #2c2c2c;
+    padding: 4rem 1.5rem;
+    border-radius: 16px;
+    margin: 3rem auto;
+    max-width: 1100px;
+    box-shadow: 0 10px 30px rgba(88, 43, 5, 0.08);
+    border: 1px solid rgba(223, 115, 27, 0.06);
+    text-align: center;
 }
 
-/* Header Section */
 .about-intro h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #df731b;
-  margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #df731b;
+    margin-bottom: 0.5rem;
 }
 
 .about-intro .lead {
-  font-size: 1.1rem;
-  color: #4a4a4a;
-  line-height: 1.6;
-  margin: 0 auto 2rem auto;
-  max-width: 800px;
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin: 0 auto 2rem auto;
+    max-width: 800px;
 }
 
-/* Form Section */
 .poetry-controls {
-  margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .poem-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .poem-form input[type="text"] {
-  padding: 0.8rem 1rem;
-  border-radius: 10px;
-  border: 2px solid rgba(223, 115, 27, 0.18);
-  background: #fff;
-  font-size: 1rem;
-  min-width: 240px;
-  transition: all 0.25s ease;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 2px solid rgba(223, 115, 27, 0.18);
+    background: #fff;
+    font-size: 1rem;
+    min-width: 240px;
+    transition: all 0.25s ease;
 }
 
 .poem-form input[type="text"]:focus {
-  border-color: #df731b;
-  box-shadow: 0 6px 18px rgba(223, 115, 27, 0.1);
+    border-color: #df731b;
+    box-shadow: 0 6px 18px rgba(223, 115, 27, 0.1);
 }
 
 .poem-form button {
-  background: linear-gradient(90deg, #df731b, #c9691a, #582b05);
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1.4rem;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: linear-gradient(90deg, #df731b, #c9691a, #582b05);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .poem-form button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(223, 115, 27, 0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(223, 115, 27, 0.18);
 }
 
-/* Wall Section */
 .poetry-wall {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.2rem;
-  justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+    justify-items: center;
 }
 
 .poem-card {
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid rgba(223, 115, 27, 0.15);
-  padding: 1.4rem;
-  width: 100%;
-  max-width: 340px;
-  text-align: left;
-  box-shadow: 0 8px 26px rgba(88, 43, 5, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid rgba(223, 115, 27, 0.15);
+    padding: 1.4rem;
+    width: 100%;
+    max-width: 340px;
+    text-align: left;
+    box-shadow: 0 8px 26px rgba(88, 43, 5, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .poem-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 34px rgba(223, 115, 27, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(223, 115, 27, 0.15);
 }
 
 .poem-card blockquote {
-  font-style: italic;
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .poem-card footer {
-  margin-top: 0.8rem;
-  font-weight: 700;
-  color: #df731b;
-  font-size: 0.95rem;
-  text-align: right;
+    margin-top: 0.8rem;
+    font-weight: 700;
+    color: #df731b;
+    font-size: 0.95rem;
+    text-align: right;
 }
 
-/* Responsive Fixes */
 @media (min-width: 768px) {
-  .poem-form input[type="text"] {
-    min-width: 300px;
-  }
+    .poem-form input[type="text"] {
+        min-width: 300px;
+    }
 }
-/* General Reset */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #fff7f0;
-  color: #333;
-  line-height: 1.6;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff7f0;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header Section */
 header {
-  background: linear-gradient(135deg, #ffb347, #ffcc80);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  border-bottom: 4px solid #ffa94d;
+    background: linear-gradient(135deg, #ffb347, #ffcc80);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 4px solid #ffa94d;
 }
 
 header h1 {
-  font-size: 3rem;
-  letter-spacing: 1px;
+    font-size: 3rem;
+    letter-spacing: 1px;
 }
 
 header p {
-  font-size: 1.2rem;
-  margin-top: 10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
-/* About Section */
 .about {
-  padding: 60px 20px;
-  text-align: center;
-  background-color: #fff3e0;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff3e0;
 }
 
 .about h2 {
-  font-size: 2.5rem;
-  color: #ff8c42;
-  margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #ff8c42;
+    margin-bottom: 20px;
 }
 
 .about p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 1.1rem;
-  color: #444;
-  line-height: 1.8;
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
 }
 
-/* Author Name (Footer Section) */
 footer {
-  background: linear-gradient(135deg, #ffb347, #ffcc80);
-  color: #222;
-  text-align: center;
-  padding: 20px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #ffb347, #ffcc80);
+    color: #222;
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 footer span {
-  font-weight: 700;
-  color: #ff7043;
+    font-weight: 700;
+    color: #ff7043;
 }
 
-/* Responsiveness */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
+    header h1 {
+        font-size: 2.2rem;
+    }
 
-  .about h2 {
-    font-size: 2rem;
-  }
+    .about h2 {
+        font-size: 2rem;
+    }
 
-  .about p {
-    font-size: 1rem;
-  }
+    .about p {
+        font-size: 1rem;
+    }
 }
