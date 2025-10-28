@@ -55,6 +55,8 @@
 			<h2>Responsive Navigation Bar</h2>
 			<div class="circle"></div>
 		</section>
+
+
 		<div class="content">
 			<h2>Poetry blogspot</h2>
 			<p>
@@ -150,6 +152,25 @@
 							“Rise, try again, and shine brighter.”
 						</blockquote>
 						<footer>– Amrita</footer>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Collaboration Section: inserted after About -->
+		<section id="collaboration" class="collab-section">
+			<div class="container">
+				<h2>Collaboration</h2>
+				<p class="lead">Share your name and a short note about your role / experience after collaborating on this project.</p>
+				<div class="collab-grid">
+					<form id="collabForm" class="collab-form">
+						<input type="text" id="collabName" placeholder="Your name" required />
+						<input type="text" id="collabRole" placeholder="Role or experience (e.g. Frontend Dev - 2 yrs)" required />
+						<textarea id="collabNotes" placeholder="Short note (optional)"></textarea>
+						<button type="submit" class="btn">Add Collaboration</button>
+					</form>
+					<div id="collabList" class="collab-list">
+						<!-- collaborator cards appear here -->
 					</div>
 				</div>
 			</div>
@@ -304,23 +325,86 @@
 		<!-- jQuery CDN Link -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<!-- Custom js -->
-		<script
-			<div
-			style="
-				padding: 20px;
-				margin: 20px;
-				border: 1px solid black;
-				border-radius: 8px;
-				text-align: center;
-				background: #fff;
-			"
-		>
-			  <h2 style="color: #333;">A Motivational Poem</h2>
-			  <p style="color: #555;">The woods are lovely, dark and deep,<br>
-			  But I have promises to keep,<br>
-			  And miles to go before I sleep,<br>
-			  And miles to go before I sleep.</p>
-			</div> src="main.js">
+		<script src="main.js"></script>
+		<!-- Collaboration feature: localStorage-backed simple client JS -->
+		<script>
+		  (function(){
+		    const collabForm = document.getElementById('collabForm');
+		    const collabList = document.getElementById('collabList');
+		    const STORAGE_KEY = 'responsive_nav_collaborators';
+
+		    function escapeHtml(str) {
+		      return str ? String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : '';
+		    }
+
+		    function loadCollaborators() {
+		      try {
+		        const data = localStorage.getItem(STORAGE_KEY);
+		        return data ? JSON.parse(data) : [];
+		      } catch (e) {
+		        console.error('Failed to load collaborators', e);
+		        return [];
+		      }
+		    }
+
+		    function saveCollaborators(arr) {
+		      try {
+		        localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+		      } catch (e) {
+		        console.error('Failed to save collaborators', e);
+		      }
+		    }
+
+		    function renderCollaborators() {
+		      const arr = loadCollaborators();
+		      if (!collabList) return;
+		      collabList.innerHTML = '';
+		      if (!arr.length) {
+		        collabList.innerHTML = '<p class="no-collab">No collaborators yet. Be the first!</p>';
+		        return;
+		      }
+		      arr.forEach((c, idx) => {
+		        const card = document.createElement('div');
+		        card.className = 'collab-card';
+		        card.innerHTML = `\n+		          <h3>${escapeHtml(c.name)}</h3>\n+		          <p class="role">${escapeHtml(c.role)}</p>\n+		          <p>${escapeHtml(c.notes)}</p>\n+		          <button class="remove-btn" data-idx="${idx}">Remove</button>`;
+		        collabList.appendChild(card);
+		      });
+		    }
+
+		    function addCollaborator(obj) {
+		      const arr = loadCollaborators();
+		      arr.unshift(obj);
+		      saveCollaborators(arr);
+		      renderCollaborators();
+		    }
+
+		    if (collabForm) {
+		      collabForm.addEventListener('submit', function(e){
+		        e.preventDefault();
+		        const name = document.getElementById('collabName').value.trim();
+		        const role = document.getElementById('collabRole').value.trim();
+		        const notes = document.getElementById('collabNotes').value.trim();
+		        if (!name) { alert('Please enter your name'); return; }
+		        addCollaborator({ name, role, notes, createdAt: new Date().toISOString() });
+		        collabForm.reset();
+		      });
+		    }
+
+		    if (collabList) {
+		      collabList.addEventListener('click', function(e){
+		        if (e.target && e.target.matches('.remove-btn')) {
+		          const idx = parseInt(e.target.dataset.idx,10);
+		          const arr = loadCollaborators();
+		          arr.splice(idx,1);
+		          saveCollaborators(arr);
+		          renderCollaborators();
+		        }
+		      });
+		    }
+
+		    // init
+		    renderCollaborators();
+		  })();
 		</script>
 	</body>
 </html>
