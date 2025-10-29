@@ -672,7 +672,7 @@ header p {
 }
 
 footer {
-    background: linear-gradient(135deg, #ffb347, #ffcc80);
+    background-color: grey;
     color: #222;
     text-align: center;
     padding: 20px;
@@ -845,4 +845,5 @@ footer span {
   footer input {
     width: 90%;
   }
+
 }
