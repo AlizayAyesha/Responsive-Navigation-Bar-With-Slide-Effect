@@ -574,6 +574,21 @@ footer > p {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(223, 115, 27, 0.18);
 }
+.collab-form button {
+    background: linear-gradient(90deg, #df731b, #c9691a, #582b05);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.collab-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(223, 115, 27, 0.18);
+}
 
 .poetry-wall {
     display: grid;
